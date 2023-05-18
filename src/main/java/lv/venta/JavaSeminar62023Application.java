@@ -18,6 +18,15 @@ import lv.venta.repos.IStudentRepo;
 @SpringBootApplication
 public class JavaSeminar62023Application {
 
+	//TODO create new branch and go to it
+	//TODO change linkage between Professor and Course to ManyToMany
+	//TODO create adding functions for both Collections
+	//TODO change testModel function to add 2 courses for Zagars and 2 professors for Ekonomika
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(JavaSeminar62023Application.class, args);
 	}

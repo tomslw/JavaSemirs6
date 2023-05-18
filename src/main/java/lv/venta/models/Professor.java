@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -50,6 +51,22 @@ public class Professor {
 	@NotNull
 	private Degree degree;
 
+	
+	
+	
+	
+	@OneToOne(mappedBy = "professor")
+	private Course course;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Professor(String name, String surname, Degree degree) {
 		this.name = name;
 		this.surname = surname;

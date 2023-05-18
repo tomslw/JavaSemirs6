@@ -50,23 +50,11 @@ public class Professor {
 	@Column(name = "Degree")
 	@NotNull
 	private Degree degree;
-
-	
-	
-	
 	
 	@OneToOne(mappedBy = "professor")
 	private Course course;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	public Professor(String name, String surname, Degree degree) {
 		this.name = name;
 		this.surname = surname;

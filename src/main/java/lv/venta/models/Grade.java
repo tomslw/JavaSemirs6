@@ -42,10 +42,14 @@ public class Grade {
 	@ManyToOne
 	@JoinColumn(name = "Idc")
 	private Course course;
+
+
+	public Grade(@Min(0) @Max(10) int gvalue, Student student, Course course) {
+		this.gvalue = gvalue;
+		this.student = student;
+		this.course = course;
+	}
 	
 	
 	
-	
-	
-	//TODO add constructor later
 }

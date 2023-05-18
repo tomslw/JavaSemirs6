@@ -39,8 +39,9 @@ public class Grade {
 	private Student student;
 	
 	
-	
-	
+	@ManyToOne
+	@JoinColumn(name = "Idc")
+	private Course course;
 	
 	
 	

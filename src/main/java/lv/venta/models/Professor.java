@@ -57,11 +57,17 @@ public class Professor {
 	private Degree degree;
 	
 	@ManyToMany
-	@JoinTable(name = "prof_course_table", joinColumns = @JoinColumn(name = "Idc"), inverseJoinColumns = @JoinColumn(name = "Idp"))
+	@JoinTable(name = "prof_course_table", 
+	joinColumns = @JoinColumn(name = "Idc"),
+	inverseJoinColumns = @JoinColumn(name = "Idp"))
 	@ToString.Exclude
 	private Collection<Course> courses;
 	
 		
+	
+	
+	
+	
 	public Professor(String name, String surname, Degree degree) {
 		this.name = name;
 		this.surname = surname;

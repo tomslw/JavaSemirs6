@@ -1,5 +1,6 @@
 package lv.venta.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import jakarta.persistence.Column;
@@ -51,7 +52,7 @@ public class Course {
 	
 	@ManyToMany(mappedBy = "courses")
 	@ToString.Exclude
-	private Collection<Professor> professors;
+	private Collection<Professor> professors = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "course")
 	@ToString.Exclude
@@ -59,12 +60,24 @@ public class Course {
 
 
 	public Course(@NotNull @Size(min = 3, max = 20) @Pattern(regexp = "[A-Z]{1}[a-z\\ ]+") String title,
-			@Min(1) @Max(20) int creditpoints, Professor professor) {
+			@Min(1) @Max(20) int creditpoints, ArrayList<Professor> professors) {
 		this.title = title;
 		this.creditpoints = creditpoints;
-		this.professor = professor;
+		this.professors = professors;
 	}
 	
+	public void addProfessor(Professor inputProfessor) {
+		if(!professors.contains(inputProfessor)) {
+			professors.add(inputProfessor);
+		}
+	}
+	
+	public void removeProfessor(Professor inputProfessor) {
+		if(professors.contains(inputProfessor)) {
+			professors.remove(inputProfessor);
+		}
+		
+	}
 
 	
 }

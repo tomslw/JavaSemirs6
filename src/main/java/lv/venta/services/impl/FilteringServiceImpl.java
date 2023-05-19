@@ -67,8 +67,14 @@ public class FilteringServiceImpl implements IFilteringService{
 
 	@Override
 	public ArrayList<Course> retrieveAllCoursesByStudentId(long id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		if(id > 0) {
+			ArrayList<Course> filteredResults = courseRepo.findByGradesStudentIds(id);
+			return filteredResults;
+		}
+		else
+		{
+			throw new Exception("Incorrect ID");
+		}
 	}
 
 	@Override

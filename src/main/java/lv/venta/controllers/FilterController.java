@@ -19,7 +19,13 @@ public class FilterController {
 		return "all-students-page";//will show all-students-page.html
 	}
 	
-	//TODO add this for Professor
+	@GetMapping("/info/showAllProfessors")//localhost:8080/info/showAllProfessors
+	public String getAllProfessorsFunc(Model model) {
+		model.addAttribute("professors", filterService.retrieveAllProfessors());
+		return "all-professors-page";//will show all-professors-page.html
+	}
+	
+	
 	//TODO add this for Grades
 	//TODO add this for Courses
 	

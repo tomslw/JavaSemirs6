@@ -13,10 +13,14 @@ public class FilterController {
 	@Autowired
 	private IFilteringService filterService;
 	
-	@GetMapping("/info/showAllStudents")//localhost:8080/info/shoAllStudents
+	@GetMapping("/info/showAllStudents")//localhost:8080/info/showAllStudents
 	public String getAllStudentsFunc(Model model) {
 		model.addAttribute("students", filterService.retrieveAllStudents());
 		return "all-students-page";//will show all-students-page.html
 	}
+	
+	//TODO add this for Professor
+	//TODO add this for Grades
+	//TODO add this for Courses
 	
 }

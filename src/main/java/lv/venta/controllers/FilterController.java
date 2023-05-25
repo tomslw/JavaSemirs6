@@ -35,5 +35,9 @@ public class FilterController {
 	
 	
 	//TODO add this for Courses
-	
+	@GetMapping("/info/showAllCourses")
+	public String getAllCourses(Model model) {
+		model.addAttribute("courses", filterService.retrieveAllCourses());
+		return "all-courses-page";
+	}
 }

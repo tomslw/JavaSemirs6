@@ -27,6 +27,13 @@ public class FilterController {
 	
 	
 	//TODO add this for Grades
+	@GetMapping("/info/showAllGrades") //localhost:8080/info/showAllGrades
+	public String getAllGradesFunc(Model model) {
+		model.addAttribute("grades", filterService.retrieveAllGrades());
+		return "all-grades-page";//will show all-grades-page.html
+	}
+	
+	
 	//TODO add this for Courses
 	
 }
